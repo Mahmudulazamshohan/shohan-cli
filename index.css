@@ -1,0 +1,6 @@
+.user {
+  display: flex;
+  flex-flow: row; }
+  .user-name {
+    margin: 0px;
+    padding: 0px; }

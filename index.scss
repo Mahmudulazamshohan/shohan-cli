@@ -1,0 +1,8 @@
+.user {
+  display: flex;
+  flex-flow: row;
+  &-name {
+    margin: 0px;
+    padding: 0px;
+  }
+}
