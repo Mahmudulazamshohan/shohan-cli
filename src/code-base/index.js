@@ -1,4 +1,12 @@
 import moduleList from "./moduleList";
+import fs from "fs";
+import path from "path";
+
+// const controllerBaseDir = path.join(
+//   __dirname,
+//   "./controllerCodeBase.js"
+// );
+
 export default (name) => {
   const moduleKeys = Object.keys(moduleList);
   const isModuleExisted = moduleKeys.includes(name);

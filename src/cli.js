@@ -74,7 +74,7 @@ export async function cli(args) {
     nodeSass.render(
       {
         file: fileLocation,
-        outputStyle: "compressed",
+        // outputStyle: "compressed",
       },
       function (err, result) {
         fs.writeFileSync(saveLocation, result.css, function (err) {
