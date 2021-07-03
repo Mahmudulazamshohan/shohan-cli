@@ -8,11 +8,11 @@ import { promisify } from "util";
 const access = promisify(fs.access);
 const copy = promisify(ncp);
 
-import CodeBase from "./code-base";
+import CodeBase from "./code-base/index";
 
 const Log = console.log;
 
-console.log(process.argv, process.cwd(), CodeBase(""));
+console.log(process.argv, process.cwd(), CodeBase("Controller"));
 
 export async function createProject(options) {
   options = {
@@ -32,20 +32,3 @@ const classcontrollerDir = path.join(
   __dirname,
   "./code-base/classcontroller.js"
 );
-
-(async function () {
-  const data = await fs.readFileSync(classcontrollerDir);
-  const actionName = "UserController";
-  const extension = "js";
-
-  const generatorLocation = path.join(
-    process.cwd(),
-    `./${actionName}.${extension}`
-  );
-
-  fs.writeFileSync(generatorLocation, data.toString());
-
-  console.log(data.toString());
-})();
-
-//console.log("controllerBaseDir", controllerBaseDir);
