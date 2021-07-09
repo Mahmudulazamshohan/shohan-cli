@@ -2,10 +2,10 @@ import { Router, Response, Request } from "express";
 import * as express from "express";
 import { ControllerInterface } from "src/utils/interfaces/controller.interface";
 
-class DemoController implements ControllerInterface {
+class ShoController implements ControllerInterface {
   // public path = "/posts";
   // public router = express.Router();
-  path = "/test";
+  path = "/sho";
   router = express.Router();
 
   constructor() {

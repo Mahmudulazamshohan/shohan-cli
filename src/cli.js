@@ -1,3 +1,4 @@
+// imports
 import arg from "arg";
 import inquirer from "inquirer";
 import nodeSass from "node-sass";
@@ -5,8 +6,9 @@ import fs from "fs";
 import path from "path";
 import chalk from "chalk";
 import Generators from "./utils/generators";
-
 import Log from "./log";
+
+// codebase
 
 function parseArgumentIntoOptions(rawArgs) {
   const args = arg(
@@ -66,15 +68,19 @@ export async function cli(args) {
 
   try {
     var generator = new Generators(options, targetDirectory);
+
+    await generator.start();
   } catch (e) {
-    console.log(chalk.bgRed("Exception:"), chalk.red(e));
+    console.error(chalk.underline.red(e));
+
+    console.log(e);
   }
 
-  Log(options);
+  // Log(options);
 
-  Log(generator);
+  // Log(generator);
 
-  Log(targetDirectory);
+  // Log(process.env.BABEL_ENV);
 
   // (async function () {
   //   const data = await fs.readFileSync(classcontrollerDir);
@@ -114,6 +120,6 @@ export async function cli(args) {
   //   );
   // }
 
-  Log("options---<>", options);
+  //Log("options---<>", options);
   //await createProject(options);
 }
