@@ -69,7 +69,11 @@ export default class Generators {
     if (data) {
       data = data
         .toString()
-        .replace("DemoController", `${actionName}Controller`);
+        .replace(
+          new RegExp("DemoController", "g"),
+          `${actionName}Controller`
+        );
+
       data = data
         .toString()
         .replace(

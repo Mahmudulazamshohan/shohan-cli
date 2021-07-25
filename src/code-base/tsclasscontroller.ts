@@ -3,8 +3,6 @@ import * as express from "express";
 import { ControllerInterface } from "src/utils/interfaces/controller.interface";
 
 class DemoController implements ControllerInterface {
-  // public path = "/posts";
-  // public router = express.Router();
   path = "/test";
   router = express.Router();
 
@@ -19,3 +17,4 @@ class DemoController implements ControllerInterface {
     res.json({});
   }
 }
+export default DemoController;
